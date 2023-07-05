@@ -13,7 +13,7 @@ class MeetupAdmin(admin.ModelAdmin):
         ("What?", {"fields": ["title"]}),
         ("When?", {"fields": ["start_time", "duration"]}),
         ("Where?", {"fields": ["location"]}),
-    ]
+        ("Who?", {"fields": ["participants"]}), ]
     list_display = ["title", "start_time"]
 
 

@@ -1,3 +1,8 @@
+## Part 0
+Libraries Installieren: django u.a. 
+
+   source .venv_studybuddy/bin/activate
+   pip install -r requirements.txt
 ## Part 1
 
     django-admin startproject studybuddy-site
@@ -86,7 +91,12 @@
     python manage.py dumpdata auth.User --natural-foreign --format yaml > studybuddy_app/fixtures/user.yaml
 
     python manage.py dumpdata studybuddy_app.Meetup --natural-foreign --format yaml > studybuddy_app/fixtures/meetup.yaml
+## Tests
 
+The scaffold contains a couple of example tests cases: 
+
+- unit tests using the django test libraries in tests/
+- acceptance tests using selenium in 
 ## Authentication and Authorization
 ### Login/Authentication
 
