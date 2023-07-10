@@ -21,6 +21,7 @@
         <a class="nav-link" href="{% url 'studybuddy_app:home' %}">StudyBuddy</a>
         <a class="nav-link" href="{% url 'studybuddy_app:meetup.list' %}">Meetups</a>
         <a class="nav-link" href="/admin">Admin</a>
+        <a href="{% url 'studybuddy_app:subject_list' %}">Subjects</a>
 
 
         {% if user.is_authenticated %}
