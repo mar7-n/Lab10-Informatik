@@ -20,7 +20,8 @@ urlpatterns = [
 
     path("users/<int:pk>", user_views.detail, name="user.detail"),
 
-    path('subjects/', SubjectListView.as_view(), name='subject_list')
+    path('subjects/', SubjectListView.as_view(), name='subject_list'),
+    path('subjects/', DetailView.as_view(), name='subject_detail'),
 ]
 
 # https://restfulapi.net/
