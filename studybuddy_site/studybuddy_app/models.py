@@ -51,3 +51,11 @@ class Meetup(models.Model):
 # many_to_many: https://docs.djangoproject.com/en/4.2/topics/db/examples/many_to_many/
 # user objects: https://docs.djangoproject.com/en/4.2/topics/auth/default/#user-objects
 # timezone https://docs.djangoproject.com/en/4.2/topics/i18n/timezones/
+
+class Subject(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
