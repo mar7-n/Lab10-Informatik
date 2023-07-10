@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Subject Deatil</h1>
+
+  {% for subject in subject_list %}
+    <div class="subject-card">
+      <h3>{{ subject.name }}</h3>
+      <p>{{ subject.description }}</p>
+      <a href="{% url 'studybuddy_app:subject_detail' subject.pk %}">View Details</a>
+    </div>
+  {% empty %}
+    <p>No subjects available.</p>
+  {% endfor %}
+{% endblock %}
