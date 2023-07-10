@@ -1,5 +1,5 @@
 
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.utils import timezone
@@ -115,3 +115,10 @@ def rsvp(request, pk):
     return HttpResponseRedirect(
         reverse("studybuddy_app:meetup.detail",
                 args=[meetup.id]))
+
+@login_required
+def cancel_participation(request, pk):
+    meetup = get_object_or_404(Meetup, pk=pk)
+    if request.user in meetup.participants.all():
+        meetup.participants.remove(request.user)
+    return redirect('studybuddy_app:meetup.detail', pk=pk)

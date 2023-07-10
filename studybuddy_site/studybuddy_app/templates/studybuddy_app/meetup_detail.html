@@ -19,13 +19,16 @@
 
 {% for participant in participants %}
 
-<p>
-    <a href="{% url 'studybuddy_app:user.detail' participant.id %}">
-        {{ participant.get_full_name }}({{ participant.get_username }})
-    </a>
-</p>
-
+{% for participant in participants %}
+    <p>
+        <a href="{% url 'studybuddy_app:user.detail' participant.id %}">
+            {{ participant.get_full_name }} ({{ participant.get_username }})
+        </a>
+    </p>
 {% endfor %}
 
-
-{% endblock content %}
+{% if request.user in meetup.participants.all %}
+    <a href="{% url 'studybuddy_app:meetup.cancel_participation' meetup.id %}" name="cancel_participation">Cancel Participation</a>
+{% else %}
+    <a href="{% url 'studybuddy_app:meetup.rsvp' meetup.id %}" name="rsvp">Participate</a>
+{% endif %}

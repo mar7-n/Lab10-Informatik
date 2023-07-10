@@ -3,10 +3,13 @@ from .views import user as user_views
 from .views import meetup as meetup_views
 from .views.meetup import MeetupListView
 from .views.meetup import MeetupDetailView
+from .views.meetup import cancel_participation
+
 app_name = "studybuddy_app"
 
 urlpatterns = [
 
+    path('meetups/<int:pk>/cancel_participation/', cancel_participation, name='meetup.cancel_participation'),
     path("meetups/<int:pk>/rsvp/", meetup_views.rsvp, name="meetup.rsvp"),
 
     path("meetups/<int:pk>/", MeetupDetailView.as_view(), name="meetup.detail"),
