@@ -18,7 +18,9 @@ urlpatterns = [
 
     path("", MeetupListView.as_view(), name="home"),
 
-    path("users/<int:pk>", user_views.detail, name="user.detail")
+    path("users/<int:pk>", user_views.detail, name="user.detail"),
+
+    path('subjects/', SubjectListView.as_view(), name='subject_list')
 ]
 
 # https://restfulapi.net/
@@ -33,3 +35,4 @@ urlpatterns = [
 
 # new form: GET /meetups/new
 # edit form: GET /meetups/:id/edit
+
