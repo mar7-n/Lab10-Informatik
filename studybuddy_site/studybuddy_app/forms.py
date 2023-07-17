@@ -2,6 +2,7 @@ import datetime
 from django import forms
 from django.db import models
 from .models import Meetup 
+from .models import Resources 
 from django.utils import timezone
 from django.forms.renderers import TemplatesSetting
 from django.contrib.admin.widgets import AdminDateWidget
@@ -35,3 +36,8 @@ class MeetupForm(forms.ModelForm):
         model = Meetup
         exclude = ('participants',)
     
+
+    class ResourceForm(forms.ModelForm):
+        class Meta:
+            model = Resources
+        exclude = ('recources',)
