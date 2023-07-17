@@ -2,6 +2,8 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.views.generic import DetailView
 from .models.py import Subject
+from .models import Subject
+from django.shortcuts import render
 
 class SubjectDetailView(DetailView):
     model = Subject
@@ -15,3 +17,10 @@ def post(self, request, *args, **kwargs):
     meetup.save()
     return HttpResponseRedirect(
         reverse("studybuddy_app:meetup_detail", args=[meetup.id]))
+
+def index(request):
+    return render(request, 'index.html')
+
+def home(request):
+    return render(request, 'home.html')
+

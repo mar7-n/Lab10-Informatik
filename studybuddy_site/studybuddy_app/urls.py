@@ -1,10 +1,12 @@
-from django.urls import path
+from django.urls import include, path
 from .views import user as user_views
 from .views import meetup as meetup_views
 from .views.meetup import MeetupListView
 from .views.meetup import MeetupDetailView
 from .views.meetup import cancel_participation
 from .views.meetup import edit
+from django.contrib import admin
+from . import views
 
 app_name = "studybuddy_app"
 
@@ -28,6 +30,8 @@ urlpatterns = [
     path('subjects/', DetailView.as_view(), name='subject_detail'),
 
     path('resource/<int:pk>/edit/', edit, name='resource_edit'),
+    path('', views.index, name='index'),
+    path('home/', views.home, name='home'),
 ]
 
 # https://restfulapi.net/
