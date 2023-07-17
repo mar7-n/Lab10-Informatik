@@ -56,9 +56,15 @@ def new(request):
 
 @login_required
 def edit(request, pk):
-    meetup = get_object_or_404(Meetup, pk=pk)
-    meetup_form = MeetupForm(instance=meetup)
-    return _render_meetup_form(request, form=meetup_form, pk=pk)
+    resource = get_object_or_404(Resource, pk=pk)
+    context = {"resource": resource,
+               "http_method": 'POST',
+               "action_url": reverse(
+                   'studybuddy_app:resource.detail',
+                   args=(pk,)),
+               "button_text": 'Save'
+               }
+    return render(request, "studybuddy_app/resource_form.html", context)
 
 
 def _render_meetup_form(request, form, pk=None, title='Edit', button='Save'):

@@ -4,6 +4,7 @@ from .views import meetup as meetup_views
 from .views.meetup import MeetupListView
 from .views.meetup import MeetupDetailView
 from .views.meetup import cancel_participation
+from .views.meetup import edit
 
 app_name = "studybuddy_app"
 
@@ -25,6 +26,8 @@ urlpatterns = [
 
     path('subjects/', SubjectListView.as_view(), name='subject_list'),
     path('subjects/', DetailView.as_view(), name='subject_detail'),
+
+    path('resource/<int:pk>/edit/', edit, name='resource_edit'),
 ]
 
 # https://restfulapi.net/
