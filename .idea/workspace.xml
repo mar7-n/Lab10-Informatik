@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7ec48f2-307a-486a-9982-0038a234de65" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/studybuddy_site/studybuddy_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/studybuddy_site/studybuddy_app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/studybuddy_site/studybuddy_app/views/detailView.py" beforeDir="false" afterPath="$PROJECT_DIR$/studybuddy_site/studybuddy_app/views/detailView.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studybuddy_site/studybuddy_app/views/meetup.py" beforeDir="false" afterPath="$PROJECT_DIR$/studybuddy_site/studybuddy_app/views/meetup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +56,7 @@
       <option name="presentableId" value="Default" />
       <updated>1688991675860</updated>
       <workItem from="1688991677128" duration="1517000" />
-      <workItem from="1689599680477" duration="3886000" />
+      <workItem from="1689599680477" duration="4213000" />
     </task>
     <servers />
   </component>
